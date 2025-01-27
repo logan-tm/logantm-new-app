@@ -1,35 +1,38 @@
-import { useState } from "react";
+import type { RootState } from "../lib/store";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, reset } from "../features/counter/counterSlice";
 
 type ClickMeBoxProps = {
   title: string;
 };
 
 const ClickMeBox = ({ title }: ClickMeBoxProps) => {
-  const [count, setCount] = useState(0);
+  const count = useSelector((state: RootState) => state.counter.value);
+  const dispatch = useDispatch();
 
   // Tailwind taken from SailboatUI
   return (
     <div className="mx-auto max-w-md rounded-lg bg-white shadow-xl border-1 border-teal-500 hover:shadow-2xl">
       <div
         className="p-4 hover:cursor-pointer"
-        onClick={() => setCount((count) => count + 1)}
+        onClick={() => dispatch(increment())}
       >
         <h3 className="text-xl font-medium text-gray-900">{title}</h3>
         <p className="mt-1 text-gray-500">
           Welcome! You've clicked this <b>{count}</b> times.
         </p>
       </div>
-      <div className="flex gap-4">
+      <div className="flex">
         <button
           type="button"
           className="rounded-md bg-teal-600 mx-4 mb-4 px-5 py-2.5 text-sm font-medium text-white shadow hover:cursor-pointer"
-          onClick={() => setCount(0)}
+          onClick={() => dispatch(reset())}
         >
           Reset
         </button>
         <button
           type="button"
-          className="rounded-md bg-teal-600 mx-4 mb-4 px-5 py-2.5 text-sm font-medium text-white shadow hover:cursor-pointer"
+          className="rounded-md bg-teal-600 mb-4 px-5 py-2.5 text-sm font-medium text-white shadow hover:cursor-pointer"
           onClick={async () => {
             const msg = await fetch("/api");
             msg.json().then((json) => console.log(json));
