@@ -1,22 +1,19 @@
-import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
-import Layout from "./layouts/Layout";
+import Layout from "./pages/layouts/Layout";
 
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="dashboard" element={<Dashboard />} />
-        </Route>
-      </Routes>
-    </Router>
-  );
-}
+const App = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="dashboard" element={<Dashboard />} />
+      </Route>
+    </Routes>
+  </Router>
+);
 
 export default App;

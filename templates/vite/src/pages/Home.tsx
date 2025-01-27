@@ -1,18 +1,7 @@
-import { useState } from "react";
+import ClickMeBox from "../components/ClickMeBox";
 
 const Home = () => {
-  const [count, setCount] = useState(0);
-  return (
-    <>
-      <h2>Home Page</h2>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>Good luck!</p>
-      </div>
-    </>
-  );
+  return <ClickMeBox title="Home" />;
 };
 
 export default Home;

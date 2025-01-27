@@ -1,3 +1,6 @@
-const About = () => <h2>About Page</h2>;
+import ClickMeBox from "../components/ClickMeBox";
 
+const About = () => {
+  return <ClickMeBox title="About" />;
+};
 export default About;

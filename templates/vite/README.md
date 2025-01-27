@@ -13,4 +13,4 @@ I made this to simplify new project creations. Specifically, all my React app pr
 (so you can do it too)
 
 `npm create vite@latest . -- --template react-ts && npm install --include=dev`
-`npm install react-router-dom`
+`npm install react-router-dom tailwindcss @tailwindcss/vite`
