@@ -22,6 +22,7 @@ program
       console.log(chalk.red('Project already exists'));
       process.exit(1);
     }
+    console.log(chalk.greenBright(`Using Node ${process.version}...`))
     fs.mkdirSync(projectPath);
     console.log(chalk.green('Creating project...'));
     const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -34,11 +35,11 @@ program
     console.log(`\nTo get started:`);
     console.log(chalk.cyan(`\ncd ${projectName}\nnpm run dev\n`))
   });
-program
-  .command('next <projectName')
-  .description('Initialize a new Nextjs project (coming sometime in the future)')
-  .action(async () => {
-    console.log(chalk.red('Nextjs is currently unsupported.'));
-    process.exit(1);
-  });
+// program
+//   .command('next <projectName>')
+//   .description('Initialize a new Nextjs project (coming sometime in the future)')
+//   .action(async () => {
+//     console.log(chalk.red('Nextjs is currently unsupported.'));
+//     process.exit(1);
+//   });
 program.parse(process.argv);
