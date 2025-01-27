@@ -49,10 +49,10 @@ const Layout = () => {
                   <li>
                     {" "}
                     <Link
-                      to="/dashboard"
+                      to="/more"
                       className="text-gray-500 transition hover:text-gray-500/75"
                     >
-                      Dashboard
+                      More
                     </Link>{" "}
                   </li>
                 </ul>

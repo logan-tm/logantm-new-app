@@ -1,6 +1,7 @@
 import type { RootState } from "../lib/store";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, reset } from "../features/counter/counterSlice";
+import Card from "./Card";
 
 type ClickMeBoxProps = {
   title: string;
@@ -12,7 +13,7 @@ const ClickMeBox = ({ title }: ClickMeBoxProps) => {
 
   // Tailwind taken from SailboatUI
   return (
-    <div className="mx-auto max-w-md rounded-lg bg-white shadow-xl border-1 border-teal-500 hover:shadow-2xl">
+    <Card>
       <div
         className="p-4 hover:cursor-pointer"
         onClick={() => dispatch(increment())}
@@ -41,7 +42,7 @@ const ClickMeBox = ({ title }: ClickMeBoxProps) => {
           Call API (check console)
         </button>
       </div>
-    </div>
+    </Card>
   );
 };
 
