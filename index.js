@@ -3,6 +3,7 @@
 // Graciously taken from this blog post:
 // https://ankitbrahmbhatt.medium.com/create-your-own-command-line-tool-like-create-react-app-the-detailed-guide-18f72c429189
 
+import json from "./package.json" assert { type: "json" };
 import { program } from "commander";
 import chalk from "chalk";
 import shell from "shelljs";
@@ -11,7 +12,7 @@ import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 
 program
-  .version('1.0.0')
+  .version(json.version)
   .description('CLI tool to create a basic React app with some accommodations.');
 program
   .command('vite <projectName>')
@@ -30,10 +31,10 @@ program
     shell.cp('-R', `${templatePath}/*`, projectPath);
     shell.cd(projectPath);
     console.log(chalk.green('Installing dependencies...'));
-    shell.exec('npm install --quiet');
+    shell.exec('npm install --silent');
     console.log(chalk.green('Project setup complete!'));
     console.log(`\nTo get started:`);
-    console.log(chalk.cyan(`\ncd ${projectName}\nnpm run dev\n`))
+    console.log(chalk.cyan(`\n\tcd ${projectName}\n\tnpm run dev\n`))
   });
 // program
 //   .command('next <projectName>')
