@@ -1,12 +1,15 @@
 {
   "name": "@logantm/new-app",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "type": "module",
   "bin": {
     "logantm-create-new-app": "index.js"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "push": "npm version patch && git push",
+    "push-minor": "npm version minor && git push",
+    "push-major": "npm version major && git push"
   },
   "keywords": [
     "Vite",
