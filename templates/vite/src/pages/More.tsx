@@ -1,5 +1,5 @@
-import Card from "../components/Card";
-import ClickMeBox from "../components/ClickMeBox";
+import Card from "src/components/Card";
+import ClickMeBox from "src/components/ClickMeBox";
 
 const More = () => {
   return (
@@ -21,9 +21,6 @@ const More = () => {
                     shadcn/ui
                   </h4>
                 </a>
-                {/* <p className="text-gray-500">
-                  A fantastic, open-source modern UI component library.
-                </p> */}
               </li>
               <li className="p-4">
                 <a href="https://sailboatui.com" target="_blank">
@@ -31,19 +28,11 @@ const More = () => {
                     SailboatUI
                   </h4>
                 </a>
-                {/* <p className="text-gray-500">
-                  A fantastic, open-source modern UI component library.
-                </p> */}
               </li>
               <li className="p-4">
                 <a href="https://hyperui.dev" target="_blank">
                   <h4 className="text-lg font-medium leading-loose">HyperUI</h4>
                 </a>
-                {/* <p className="text-gray-500">
-                  Measure what matters with Untitled’s easy-to-use reports. You
-                  can filter, export, and drilldown on the data in a couple
-                  clicks.
-                </p> */}
               </li>
               <li className="p-4">
                 <a
@@ -54,10 +43,6 @@ const More = () => {
                     Tailwind Starter Kit
                   </h4>
                 </a>
-                {/* <p className="text-gray-500">
-                  An all-in-one customer service platform that helps you balance
-                  everything your customers need to be happy.
-                </p> */}
               </li>
             </ul>
           </div>

@@ -1,7 +1,7 @@
 import type { RootState } from "../lib/store";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, reset } from "../features/counter/counterSlice";
-import Card from "./Card";
+import { increment, reset } from "src/features/counter/counterSlice";
+import Card from "src/components/Card";
 
 type ClickMeBoxProps = {
   title: string;

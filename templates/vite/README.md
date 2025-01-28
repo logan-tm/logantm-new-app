@@ -6,11 +6,5 @@ I made this to simplify new project creations. Specifically, all my React app pr
 - React Router DOM
 - Redux Toolkit
 - TailwindCSS
-- A proxy API server (TBD)
-
-## How I generated this code
-
-(so you can do it too)
-
-`npm create vite@latest . -- --template react-ts && npm install --include=dev`
-`npm install react-router-dom tailwindcss @tailwindcss/vite`
+- A proxy API server
+- A method of auto-versioning

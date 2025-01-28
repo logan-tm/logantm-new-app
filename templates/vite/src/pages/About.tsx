@@ -1,5 +1,5 @@
-import Card from "../components/Card";
-import ClickMeBox from "../components/ClickMeBox";
+import Card from "src/components/Card";
+import ClickMeBox from "src/components/ClickMeBox";
 
 const About = () => {
   return (
