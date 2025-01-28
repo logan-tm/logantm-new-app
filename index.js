@@ -20,9 +20,14 @@ function setup(projectName, relativeTemplatePath) {
   console.log(chalk.green('Creating project...'));
   const __dirname = dirname(fileURLToPath(import.meta.url));
   const templatePath = path.join(__dirname, relativeTemplatePath);
-  shell.cp('-R', `${templatePath}/*`, projectPath);  // Normal files
-  shell.cp('-R', `${templatePath}/.*`, projectPath); // Hidden files
+  const gitHooksPath = path.join(__dirname, './githooks');
+  shell.cp('-R', `${templatePath}/*`, projectPath);         // Normal files
+  shell.cp('-R', `${templatePath}/.*`, projectPath);        // Hidden files
   shell.cd(projectPath);
+  shell.exec('git init --quiet');
+  shell.cp(`${gitHooksPath}/*`, `${projectPath}/.git/hooks`);  // Git hooks
+  shell.exec('chmod +x .git/hooks/pre-commit')
+  
   console.log(chalk.green('Installing dependencies...'));
   shell.exec('npm install --silent');
   shell.exec(`sed -i 's/project_name/${projectName}/g' package.json`);
