@@ -1,6 +1,6 @@
 {
   "name": "@logantm/new-app",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "type": "module",
   "bin": {
     "logantm-create-new-app": "index.js"
@@ -9,15 +9,13 @@
     "start": "node index.js"
   },
   "keywords": [
-    "Vite React"
+    "Vite",
+    "React"
   ],
   "author": "logantm",
   "license": "MIT",
   "description": "A CLI tool to create a basic app with some accommodations. Currently supports Vite/React",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/logan-tm/new-app.git"
-  },
+  "repository": "github:logan-tm/new-app",
   "homepage": "https://github.com/logan-tm/new-app#README",
   "dependencies": {
     "chalk": "^5.4.1",
