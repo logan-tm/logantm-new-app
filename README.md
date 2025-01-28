@@ -1,6 +1,6 @@
 # new-app
 
-A simple CLI tool for making React applications, because I can't stand the boilerplating. I mainly use Vite/React, but I may add some more functionality later.
+A simple CLI tool for making React applications, because I can't stand the boilerplating. I mainly use Vite/React and it's currently the only option, but I may add some more functionality later such as a barebones node TS repo or Nextjs.
 
 ## Usage
 
@@ -8,5 +8,3 @@ A simple CLI tool for making React applications, because I can't stand the boile
 
 Example:
 `npx @logantm/new-app vite helloworld`
-
-Feel free to fork this and edit/use on your own!

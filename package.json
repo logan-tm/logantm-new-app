@@ -1,6 +1,6 @@
 {
   "name": "@logantm/new-app",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "type": "module",
   "bin": {
     "logantm-create-new-app": "index.js"
@@ -8,7 +8,9 @@
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": [],
+  "keywords": [
+    "Vite React"
+  ],
   "author": "logantm",
   "license": "MIT",
   "description": "A CLI tool to create a basic app with some accommodations. Currently supports Vite/React",
