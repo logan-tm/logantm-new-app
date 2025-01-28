@@ -22,7 +22,7 @@ program
       console.log(chalk.red('Project already exists'));
       process.exit(1);
     }
-    console.log(chalk.greenBright(`Using Node ${process.version}...`))
+    // console.log(chalk.greenBright(`Using Node ${process.version}...`))
     fs.mkdirSync(projectPath);
     console.log(chalk.green('Creating project...'));
     const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -30,7 +30,7 @@ program
     shell.cp('-R', `${templatePath}/*`, projectPath);
     shell.cd(projectPath);
     console.log(chalk.green('Installing dependencies...'));
-    shell.exec('npm install');
+    shell.exec('npm install --quiet');
     console.log(chalk.green('Project setup complete!'));
     console.log(`\nTo get started:`);
     console.log(chalk.cyan(`\ncd ${projectName}\nnpm run dev\n`))
