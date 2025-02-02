@@ -20,20 +20,21 @@ function setup(projectName, relativeTemplatePath) {
   console.log(chalk.green('Creating project...'));
   const __dirname = dirname(fileURLToPath(import.meta.url));
   const templatePath = path.join(__dirname, relativeTemplatePath);
-  const gitHooksPath = path.join(__dirname, './githooks');
   shell.cp('-R', `${templatePath}/*`, projectPath);         // Normal files
   shell.cp('-R', `${templatePath}/.*`, projectPath);        // Hidden files
   shell.cd(projectPath);
   shell.exec('git init --quiet');
-  shell.cp(`${gitHooksPath}/*`, `${projectPath}/.git/hooks`);  // Git hooks
-  shell.exec('chmod +x .git/hooks/pre-commit')
+  shell.exec('chmod +x scripts/init.sh');
+  shell.exec('bash scripts/init.sh');
   
   console.log(chalk.green('Installing dependencies...'));
   shell.exec('npm install --silent');
   shell.exec(`sed -i 's/project_name/${projectName}/g' package.json`);
   console.log(chalk.green('Project setup complete!'));
   console.log(`\nTo get started:`);
-  console.log(chalk.cyan(`\n\tcd ${projectName}\n\tnpm run dev`))
+  console.log(chalk.cyan(`\n\tcd ${projectName}\n\tnpm run dev`));
+  console.log(chalk.green(`\nBefore you build, update the following files:`));
+  console.log(chalk.cyan(`\t- scripts/generate-sitemap.sh`));
 }
 
 program
@@ -41,7 +42,6 @@ program
     const __dirname = dirname(fileURLToPath(import.meta.url));
     const packageJsonPath = path.join(__dirname, './package.json');
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-    // console.log(chalk.greenBright(`App version ${packageJson.version}...`));
     return packageJson.version;
   })())
   .description('CLI tool to create a basic React app with some accommodations.');
