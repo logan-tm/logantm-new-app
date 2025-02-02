@@ -25,6 +25,7 @@ function setup(projectName, relativeTemplatePath) {
   shell.cd(projectPath);
   shell.exec('git init --quiet');
   shell.exec('chmod +x scripts/init.sh');
+  console.log(chalk.green('Setting git hooks...'));
   shell.exec('bash scripts/init.sh');
   
   console.log(chalk.green('Installing dependencies...'));
