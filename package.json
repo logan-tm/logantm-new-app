@@ -1,6 +1,6 @@
 {
   "name": "@logantm/new-app",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "type": "module",
   "bin": {
     "logantm-create-new-app": "index.js"
