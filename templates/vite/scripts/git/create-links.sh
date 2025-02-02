@@ -48,7 +48,7 @@ create_hook_symlink() {
         # Create the symlink
         ln -s "../../$SOURCE_DIR/$hook" "$target_file"
         chmod +x "$source_file"
-        echo "Created symlink for $hook"
+        # echo "Created symlink for $hook"
     fi
 }
 
@@ -57,6 +57,6 @@ for hook in "${hooks[@]}"; do
     create_hook_symlink "$hook"
 done
 
-echo "Git hooks setup complete!"
-echo "Available hooks directory: $HOOKS_DIR"
-echo "Source scripts directory: $SOURCE_DIR"
+# echo "Git hooks setup complete!"
+# echo "Available hooks directory: $HOOKS_DIR"
+# echo "Source scripts directory: $SOURCE_DIR"
